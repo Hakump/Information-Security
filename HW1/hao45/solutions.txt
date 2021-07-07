@@ -1,0 +1,48 @@
+# Part A:
+
+## Recovered password
+11235813
+
+## Pseudocode for attack
+exp = 1
+for password from 0 to 10^10
+	for x from exp to 10:
+	    hash name,password,salt with zerofill
+	    if match:
+		return the password
+	    if(password%10^exp = 9):
+		exp++
+    
+## Worst case running time
+O(N*log10(N)) where n is the largest possible number to be the password
+
+## Discussion merits of current proposal
+hashing is vary fast and the CBC mode is ok 
+
+## Suggestions for improvement
+Since hash is very fast, so we can crack the password within 1 minute if username and salt are known
+Thus, hash more times, like 256 times to slow the brute-force attack.
+Must encrypt the hash, so if attackers do edit something, the receiver can know. 
+Besides, add more kind of characters in the password to expand the password pool.
+
+# Part B:
+
+## Discussion of the current scheme
+It is very vulunerable for known text attack because we know the hash and can change it, but the receiver may not know it.
+So we can change the IV to change the content
+
+## Suggestions for improving the scheme
+First: Encrypt the hashed tag so we cannot change it without knowing the key
+Second: Fix the length of the message to certain amount (prevent chosen-text attack by adding a new block at the end)
+
+
+# Extra Credit:
+
+## Recovered password
+Newm@dis0n
+
+## Correct pseudocode
+for (key in the library):
+    hash name,key,salt for 256 times:
+	if hashed value == correct hash
+	    return true

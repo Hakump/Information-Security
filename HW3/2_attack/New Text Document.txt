@@ -1,0 +1,16 @@
+Q1:
+if one announce a diff Mac than itself:
+src = announcer dst is the receiver
+
+Q2:
+for...
+  get i if exist
+  insert i if not
+    exist: insert port
+    not: insert port and smallest packet num
+
+Q3:
+for.... in hash map
+ if exists: add 1
+ else add
+

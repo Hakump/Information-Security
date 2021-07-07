@@ -1,0 +1,33 @@
+# Part A:
+
+## Recovered password
+
+## Pseudocode for attack
+
+## Worst case running time
+
+## Discussion merits of current proposal
+
+## Suggestions for improvement
+
+
+# Part B:
+
+## Discussion of the current scheme
+1. hashed value is not encrypted, so the integrity check is compromised
+2. no length check
+
+## Suggestions for improving the scheme
+1. encrypt the hash
+2. fix the length for all messages
+
+# Extra Credit:
+
+## Recovered password
+Newm@dis0n
+## Correct pseudocode
+for (key in the library):
+    hash key for 256 times:
+	if hashed value == correct hash
+	    return true
+

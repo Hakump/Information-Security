@@ -1,0 +1,5 @@
+Arp spoofing: comparaing the sender's (based on trusted ip-mac pairs) and announced mac address
+
+Port scan: for each ip, record the list of ports scanned by tcp/udp connection. If number of ports is greater than 100, alert.
+
+Synflood: for each ip, record the packet and time pair. If exists a list of tcp with length > 100 within 1 second, alert.
